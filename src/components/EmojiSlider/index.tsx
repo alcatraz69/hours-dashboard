@@ -27,13 +27,16 @@ export default function EmojiSlider() {
   }, [label]);
 
   useEffect(() => {
+    let localRef = null;
     if(sliderRef.current){
-        sliderRef.current.addEventListener('change', handleSliderChange);
+        localRef = sliderRef.current;
+        localRef.addEventListener('change', handleSliderChange);
         return () => {
-            sliderRef.current.removeEventListener('change', handleSliderChange);
+            localRef.removeEventListener('change', handleSliderChange);
         };
     }
   }, [sliderRef]);
+
 
   return (
     <>

@@ -1,5 +1,4 @@
 import React from 'react';
-import EmojiSlider from './components/EmojiSlider';
 import Navbar from './components/Navbar';
 import BudgetStatus from './pages/BudgetStatus';
 import Dashboard from './pages/Dashboard';
