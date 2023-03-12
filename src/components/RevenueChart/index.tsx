@@ -1,16 +1,18 @@
 import { Grid, Switch } from "@mui/material";
-import React, { useState } from "react";
-import Chart from "react-apexcharts";
+import React from "react";
+import ReactApexChart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
 
 const RevenueChart = () => {
-  const [chartState] = useState({
-    series: [
-      {
-        name: "sales",
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-      },
-    ],
-    options: {
+
+    const series = [
+        {
+          name: "sales",
+          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+        },
+      ]
+  
+    const options: ApexOptions = {
       chart: {
         height: 350,
         type: "line",
@@ -50,8 +52,8 @@ const RevenueChart = () => {
           "20 Sep",
         ],
       },
-    },
-  });
+    }
+
   return (
     <>
       <Grid container alignItems='center' justifyContent='space-between' px={2}>
@@ -62,12 +64,12 @@ const RevenueChart = () => {
           <Grid item>Weekly</Grid>
         </Grid>
       </Grid>
-      <Chart
+      <ReactApexChart
         type="line"
         height="400" 
         width="550"
-        options={chartState.options}
-        series={chartState.series}
+        options={options}
+        series={series}
       />
     </>
   );
